@@ -102,4 +102,40 @@ function setClock(selector, endtime) {
 
 setClock(".timer", deadline);
 
+// modal
+
+const modaltrigger = document.querySelectorAll('[data-modal]'),
+    modal = document.querySelector('.modal'),
+    modalCloseBtn = document.querySelector('.modal__close');
+
+    modaltrigger.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // modal.style.display = "block";
+            modal.classList.add('show');
+            modal.classList.remove('hiden');
+            document.body.style.overflow = "hidden";
+        })
+    })
+
+    function closeModal() {
+        modal.classList.add('hiden');
+        modal.classList.remove('show');
+        // modal.style.display = "none";
+        document.body.style.overflow = "";
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal)
+
+    modal.addEventListener('click', (e) => {
+        if(e.target === modal) {
+            closeModal();
+        }
+    })
+
+    document.addEventListener('keydown', (e) => {
+        if(e.code === "Escape" && modal.classList.contains('show')) {
+            closeModal();
+        }
+    })
+
 });
