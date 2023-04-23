@@ -141,7 +141,7 @@ const modaltrigger = document.querySelectorAll('[data-modal]'),
         }
     })
 
-    // const modalTimerId = setTimeout(openModal, 3000);
+    const modalTimerId = setTimeout(openModal, 3000);
 
     function showModalByScroll() {
         if (window.scrollY + document.documentElement.clientHeight >= document.documentElement.scrollHeight) { 
@@ -200,8 +200,7 @@ const modaltrigger = document.querySelectorAll('[data-modal]'),
         `Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!`,
         9,
         `.menu .container`,
-        `menu__item`,
-        `big`,
+
     ).render();
 
     new MenuCard(
@@ -212,7 +211,6 @@ const modaltrigger = document.querySelectorAll('[data-modal]'),
         12,
         `.menu .container`,
         `menu__item`,
-        
     ).render();
 
     new MenuCard(
